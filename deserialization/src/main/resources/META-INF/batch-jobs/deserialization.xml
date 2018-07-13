@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <job id="deserialization" restartable="#{jobParameters['restartable']}?:true"
-     xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">
+     xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/jobXML_1_0.xsd"
+     version="1.0">
     <step id="deserialization.step1">
         <chunk item-count="3">
             <reader ref="itemReader1">
