@@ -28,8 +28,6 @@
         <dependency>
             <groupId>org.jberet</groupId>
             <artifactId>jberet-camel</artifactId>
-            <version>${project.version}</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.jberet</groupId>

@@ -28,12 +28,10 @@
         <dependency>
             <groupId>org.jberet</groupId>
             <artifactId>jberet-wildfly-cluster-infinispan</artifactId>
-            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jberet</groupId>
             <artifactId>jberet-support</artifactId>
-            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -50,13 +48,6 @@
         <dependency>
             <groupId>org.jberet.test-apps</groupId>
             <artifactId>common</artifactId>
-            <version>${project.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.jberet</groupId>
-                    <artifactId>jberet-se</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.jberet.samples</groupId>
