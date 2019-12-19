@@ -50,7 +50,6 @@
     </modules>
 
     <properties>
-        <version.maven.war.plugin>2.6</version.maven.war.plugin>
         <version.maven.wildfly.plugin>2.0.2.Final</version.maven.wildfly.plugin>
         <version.org.jboss.resteasy>3.0.12.Final</version.org.jboss.resteasy>
         <version.org.jberet>1.4.0.Final</version.org.jberet>
