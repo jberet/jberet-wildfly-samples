@@ -174,6 +174,10 @@
             <groupId>org.jberet</groupId>
             <artifactId>jberet-schedule-executor</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.jberet</groupId>
+            <artifactId>jberet-schedule-timer</artifactId>
+        </dependency>
 
         <!-- Test Dependencies -->
         <dependency>
