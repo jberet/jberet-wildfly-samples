@@ -40,10 +40,6 @@
             <artifactId>jberet-samples-common</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.jberet</groupId>
-            <artifactId>jberet-schedule-executor</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
