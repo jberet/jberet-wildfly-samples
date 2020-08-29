@@ -48,6 +48,7 @@
         <module>clusterChunkServlet</module>
         <module>clusterChunkEJB</module>
         <module>clusterInfinispan</module>
+        <module>batchlet-singleton</module>
     </modules>
 
     <properties>
