@@ -18,7 +18,7 @@
         <chunk>
             <reader ref="csvItemReader">
                 <properties>
-                    <property name="resource" value="https://raw.githubusercontent.com/jberet/jsr352/master/jberet-support/src/test/resources/movies-2012.csv"/>
+                    <property name="resource" value="https://raw.githubusercontent.com/jberet/jberet-support/master/src/test/resources/movies-2012.csv"/>
                     <property name="start" value="1"/>
                     <property name="end" value="3"/>
                     <property name="beanType" value="org.jberet.samples.wildfly.common.Movie"/>
