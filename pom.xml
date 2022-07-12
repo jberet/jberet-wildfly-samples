@@ -52,6 +52,7 @@
     </modules>
 
     <properties>
+        <version.org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec>2.0.1.Final</version.org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec>
         <version.maven.wildfly.plugin>2.0.2.Final</version.maven.wildfly.plugin>
         <version.org.jboss.resteasy>3.0.12.Final</version.org.jboss.resteasy>
         <version.org.jberet.rest>1.4.1.Final</version.org.jberet.rest>
@@ -65,6 +66,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.jboss.spec.javax.xml.bind</groupId>
+                <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
+                <version>${version.org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec}</version>
+            </dependency>
             <dependency>
                 <groupId>org.jberet</groupId>
                 <artifactId>jberet-core</artifactId>
@@ -156,6 +162,10 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.jboss.spec.javax.xml.bind</groupId>
+            <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.jboss.spec.javax.ws.rs</groupId>
             <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
