@@ -8,6 +8,7 @@ with low memory footprint.
 
 This is a webapp packaged as `excelstream2csv.war`, and deployed to WildFly.  To run samples,
 
+    # If the parent project has not been built, you may need to build from the parent directory wildfly-jberet-samples
     cd wildfly-jberet-samples/excelstream2csv
     mvn install -Pwildfly
 
