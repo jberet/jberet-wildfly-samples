@@ -53,7 +53,7 @@
 
     <properties>
         <version.org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec>2.0.1.Final</version.org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec>
-        <version.maven.wildfly.plugin>4.0.0.Final</version.maven.wildfly.plugin>
+        <version.maven.wildfly.plugin>4.2.2.Final</version.maven.wildfly.plugin>
         <wildfly.version>26.0.0.Final</wildfly.version>
         <version.org.jboss.resteasy>4.7.4.Final</version.org.jboss.resteasy>
         <version.org.jboss.resteasy.resteasy-jackson-provider>4.0.0.Beta5</version.org.jboss.resteasy.resteasy-jackson-provider>
