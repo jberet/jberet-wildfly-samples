@@ -67,6 +67,19 @@
                     <plugin>
                         <groupId>org.wildfly.plugins</groupId>
                         <artifactId>wildfly-maven-plugin</artifactId>
+                        <version>${version.maven.wildfly.plugin}</version>
+                        <configuration>
+                            <discover-provisioning-info>
+                                <version>${version.wildfly}</version>
+                            </discover-provisioning-info>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>package</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                     <plugin>
                         <artifactId>maven-failsafe-plugin</artifactId>
