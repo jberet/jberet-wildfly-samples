@@ -36,6 +36,12 @@
         <finalName>batchproperty</finalName>
     </build>
 
+    <properties>
+        <jboss.home>${project.build.directory}${file.separator}wildfly</jboss.home>
+        <server.test.feature.pack.artifactId>wildfly-preview-feature-pack</server.test.feature.pack.artifactId>
+        <galleon.fork.embedded>true</galleon.fork.embedded>
+    </properties>
+
     <profiles>
         <profile>
             <id>default</id>
@@ -65,8 +71,92 @@
             <build>
                 <plugins>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <configuration>
+                            <warName>batchproperty</warName>
+                        </configuration>
+                    </plugin>
+                    <plugin>
                         <groupId>org.wildfly.plugins</groupId>
                         <artifactId>wildfly-maven-plugin</artifactId>
+                        <version>${version.maven.wildfly.plugin}</version>
+                        <configuration>
+                            <jboss-home>${jboss.home}</jboss-home>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>server-provisioning</id>
+                                <phase>generate-test-resources</phase>
+                                <goals>
+                                    <goal>provision</goal>
+                                </goals>
+                                <configuration>
+                                    <provisioning-dir>${jboss.home}</provisioning-dir>
+                                    <galleon-options>
+                                        <jboss-fork-embedded>${galleon.fork.embedded}</jboss-fork-embedded>
+                                    </galleon-options>
+                                    <feature-packs>
+                                        <feature-pack>
+                                            <groupId>org.wildfly</groupId>
+                                            <artifactId>${server.test.feature.pack.artifactId}</artifactId>
+                                            <version>${wildfly.version}</version>
+                                            <inherit-configs>false</inherit-configs>
+                                            <included-configs>
+                                                <config>
+                                                    <model>standalone</model>
+                                                    <name>standalone-full.xml</name>
+                                                </config>
+                                                <config>
+                                                    <model>standalone</model>
+                                                    <name>standalone.xml</name>
+                                                </config>
+                                            </included-configs>
+                                            <excluded-packages>
+                                                <name>docs.schema</name>
+                                                <name>appclient</name>
+                                                <name>domain</name>
+                                            </excluded-packages>
+                                        </feature-pack>
+                                    </feature-packs>
+                                    <channels>
+                                        <channel>
+                                            <manifest>
+                                                <groupId>org.jberet</groupId>
+                                                <artifactId>jberet-channel-manifest</artifactId>
+                                                <version>${version.org.jberet.jberet-core}</version>
+                                            </manifest>
+                                        </channel>
+                                    </channels>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>wildfly-start</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>start</goal>
+                                    <goal>deploy</goal>
+                                </goals>
+                                <configuration>
+                                    <filename>batchproperty.war</filename>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <phase>post-integration-test</phase>
+                                <id>wildfly-stop</id>
+                                <goals>
+                                    <goal>shutdown</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/*IT.java</exclude>
+                            </excludes>
+                        </configuration>
                     </plugin>
                     <plugin>
                         <artifactId>maven-failsafe-plugin</artifactId>
@@ -78,6 +168,14 @@
                                 <test.war>${project.build.directory}${file.separator}${project.build.finalName}.war</test.war>
                             </systemPropertyVariables>
                         </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
