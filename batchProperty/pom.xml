@@ -39,8 +39,6 @@
     <properties>
         <jboss.home>${project.build.directory}${file.separator}wildfly</jboss.home>
         <server.test.feature.pack.artifactId>wildfly-preview-feature-pack</server.test.feature.pack.artifactId>
-<!--        <version.org.wildfly>30.0.1.Final</version.org.wildfly>-->
-        <version.org.wildfly.plugins.wildfly-maven-plugin>5.0.0.Final</version.org.wildfly.plugins.wildfly-maven-plugin>
         <galleon.fork.embedded>true</galleon.fork.embedded>
     </properties>
 
@@ -82,7 +80,7 @@
                     <plugin>
                         <groupId>org.wildfly.plugins</groupId>
                         <artifactId>wildfly-maven-plugin</artifactId>
-                        <version>${version.org.wildfly.plugins.wildfly-maven-plugin}</version>
+                        <version>${version.maven.wildfly.plugin}</version>
                         <configuration>
                             <jboss-home>${jboss.home}</jboss-home>
                         </configuration>
