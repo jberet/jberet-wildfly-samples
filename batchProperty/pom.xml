@@ -71,6 +71,7 @@
                         <configuration>
                             <discover-provisioning-info>
                                 <version>${version.wildfly}</version>
+                                <failsOnError>false</failsOnError>
                             </discover-provisioning-info>
                         </configuration>
                         <executions>
@@ -91,6 +92,14 @@
                                 <test.war>${project.build.directory}${file.separator}${project.build.finalName}.war</test.war>
                             </systemPropertyVariables>
                         </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>

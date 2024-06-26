@@ -211,12 +211,12 @@
                     <groupId>org.wildfly.plugins</groupId>
                     <artifactId>wildfly-maven-plugin</artifactId>
                     <version>${version.maven.wildfly.plugin}</version>
-
                     <executions>
                         <execution>
                             <id>wildfly-deploy</id>
                             <phase>pre-integration-test</phase>
                             <goals>
+                                <goal>start</goal>
                                 <goal>deploy</goal>
                             </goals>
                         </execution>
