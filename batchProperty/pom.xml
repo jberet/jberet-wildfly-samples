@@ -100,7 +100,7 @@
                                         <feature-pack>
                                             <groupId>org.wildfly</groupId>
                                             <artifactId>${server.test.feature.pack.artifactId}</artifactId>
-                                            <version>${version.wildfly}</version>
+                                            <version>${wildfly.version}</version>
                                             <inherit-configs>false</inherit-configs>
                                             <included-configs>
                                                 <config>
