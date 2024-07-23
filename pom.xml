@@ -54,12 +54,12 @@
     <properties>
         <version.org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec>2.0.1.Final</version.org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec>
         <version.maven.wildfly.plugin>5.0.0.Final</version.maven.wildfly.plugin>
-        <wildfly.version>26.0.0.Final</wildfly.version>
+        <wildfly.version>30.0.1.Final</wildfly.version>
         <version.org.jboss.resteasy>6.2.8.Final</version.org.jboss.resteasy>
         <version.org.jboss.resteasy.resteasy-jackson-provider>4.0.0.Beta5</version.org.jboss.resteasy.resteasy-jackson-provider>
         <version.org.jberet.rest>1.4.1.Final</version.org.jberet.rest>
         <version.org.jberet.schedule>1.4.1.Final</version.org.jberet.schedule>
-        <version.org.jberet.jberet-core>1.4.7.Final</version.org.jberet.jberet-core>
+        <version.org.jberet.jberet-core>2.2.0.Final</version.org.jberet.jberet-core>
         <version.org.jberet.jberet-support>2.1.2.Final</version.org.jberet.jberet-support>
         <version.org.jberet.jberet-camel>1.3.9.SP3</version.org.jberet.jberet-camel>
         <version.org.jberet.jberet-wildfly-cluster>1.3.9.SP3</version.org.jberet.jberet-wildfly-cluster>
@@ -211,23 +211,23 @@
                     <groupId>org.wildfly.plugins</groupId>
                     <artifactId>wildfly-maven-plugin</artifactId>
                     <version>${version.maven.wildfly.plugin}</version>
-
-                    <executions>
-                        <execution>
-                            <id>wildfly-deploy</id>
-                            <phase>pre-integration-test</phase>
-                            <goals>
-                                <goal>deploy</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>wildfly-undeploy</id>
-                            <phase>clean</phase>
-                            <goals>
-                                <goal>undeploy</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <id>wildfly-deploy</id>-->
+<!--                            <phase>pre-integration-test</phase>-->
+<!--                            <goals>-->
+<!--                                <goal>start</goal>-->
+<!--                                <goal>deploy</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                        <execution>-->
+<!--                            <id>wildfly-undeploy</id>-->
+<!--                            <phase>clean</phase>-->
+<!--                            <goals>-->
+<!--                                <goal>undeploy</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
