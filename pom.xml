@@ -65,10 +65,17 @@
         <version.org.jberet.jberet-wildfly-cluster>1.3.9.SP3</version.org.jberet.jberet-wildfly-cluster>
         <version.org.jberet.test-apps>3.0.0.Final</version.org.jberet.test-apps>
         <junit-jupiter.version>5.10.3</junit-jupiter.version>
+        <version.jakarta.batch-api>2.1.1</version.jakarta.batch-api>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/jakarta.batch/jakarta.batch-api -->
+            <dependency>
+                <groupId>jakarta.batch</groupId>
+                <artifactId>jakarta.batch-api</artifactId>
+                <version>${version.jakarta.batch-api}</version>
+            </dependency>
             <dependency>
                 <groupId>org.jboss.spec.javax.xml.bind</groupId>
                 <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
@@ -220,7 +227,6 @@
                     <groupId>org.wildfly.plugins</groupId>
                     <artifactId>wildfly-maven-plugin</artifactId>
                     <version>${version.maven.wildfly.plugin}</version>
-
                     <executions>
                         <execution>
                             <id>wildfly-deploy</id>

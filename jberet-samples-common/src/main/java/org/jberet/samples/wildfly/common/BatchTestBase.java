@@ -11,7 +11,6 @@
 package org.jberet.samples.wildfly.common;
 
 import java.util.Properties;
-import javax.batch.runtime.BatchStatus;
 
 import org.jberet.rest.client.BatchClient;
 import org.jberet.rest.entity.JobExecutionEntity;
