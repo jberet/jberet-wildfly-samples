@@ -25,10 +25,10 @@
     <packaging>war</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>org.jboss.spec.javax.ejb</groupId>
-            <artifactId>jboss-ejb-api_3.2_spec</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.spec.javax.ejb</groupId>-->
+<!--            <artifactId>jboss-ejb-api_3.2_spec</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.jboss.spec.javax.jms</groupId>
             <artifactId>jboss-jms-api_2.0_spec</artifactId>
@@ -45,10 +45,10 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>javax.validation</groupId>-->
+<!--            <artifactId>validation-api</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.jberet.test-apps</groupId>
             <artifactId>common</artifactId>
