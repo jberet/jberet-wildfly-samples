@@ -31,6 +31,20 @@
 <!--            <artifactId>jboss-servlet-api_3.1_spec</artifactId>-->
 <!--            <scope>provided</scope>-->
 <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>${version.hamcrest}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>${version.jakarta.servlet-api}</version>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.jberet</groupId>

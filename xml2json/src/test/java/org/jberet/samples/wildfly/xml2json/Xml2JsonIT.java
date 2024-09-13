@@ -10,11 +10,10 @@
 
 package org.jberet.samples.wildfly.xml2json;
 
-import javax.batch.runtime.BatchStatus;
-
+import jakarta.batch.runtime.BatchStatus;
 import org.jberet.rest.client.BatchClient;
 import org.jberet.samples.wildfly.common.BatchTestBase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public final class Xml2JsonIT extends BatchTestBase {
     private static final String jobName = "xml2json";

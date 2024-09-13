@@ -11,14 +11,14 @@
 package org.jberet.samples.wildfly.purgeJdbcRepository2;
 
 import java.util.Properties;
-import javax.batch.runtime.BatchStatus;
 
+import jakarta.batch.runtime.BatchStatus;
 import org.jberet.rest.client.BatchClient;
 import org.jberet.rest.entity.JobExecutionEntity;
 import org.jberet.samples.wildfly.common.BatchTestBase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Tests to verify {@code PurgeBatchlet} in JBoss EAP and WildFly.

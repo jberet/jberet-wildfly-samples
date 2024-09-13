@@ -10,12 +10,13 @@
 
 package org.jberet.samples.wildfly.deserialization;
 
+import jakarta.batch.api.BatchProperty;
+import jakarta.batch.api.chunk.AbstractItemReader;
+import jakarta.batch.runtime.context.StepContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+
 import java.io.Serializable;
-import javax.batch.api.BatchProperty;
-import javax.batch.api.chunk.AbstractItemReader;
-import javax.batch.runtime.context.StepContext;
-import javax.inject.Inject;
-import javax.inject.Named;
 
 @Named
 public class ItemReader1 extends AbstractItemReader {

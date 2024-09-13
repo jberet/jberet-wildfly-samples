@@ -11,11 +11,14 @@
 package org.jberet.samples.wildfly.deserialization;
 
 import java.util.Properties;
-import javax.batch.runtime.BatchStatus;
 
+import jakarta.batch.runtime.BatchStatus;
+import jakarta.ws.rs.WebApplicationException;
 import org.jberet.rest.client.BatchClient;
 import org.jberet.samples.wildfly.common.BatchTestBase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DeserializationIT extends BatchTestBase {
     /**
@@ -107,14 +110,16 @@ public class DeserializationIT extends BatchTestBase {
      * @throws Exception
      * @see #startNotRestartable()
      */
-    @Test(expected = javax.ws.rs.WebApplicationException.class)
+    @Test
     public void startNotRestartableRestart() throws Exception {
-        final Properties params = new Properties();
-        params.setProperty("fail.on", String.valueOf(-1));
+        assertThrows(WebApplicationException.class, () -> {
+            final Properties params = new Properties();
+            params.setProperty("fail.on", String.valueOf(-1));
 
-        //the expected BatchStatus.FAILED will not be used here, since the restart operation will cause
-        //internal server error, and no new restart job execution is ever created or run.
-        restartJobCheckStatus(notRestartableJobName, params, 500, BatchStatus.FAILED);
+            //the expected BatchStatus.FAILED will not be used here, since the restart operation will cause
+            //internal server error, and no new restart job execution is ever created or run.
+            restartJobCheckStatus(notRestartableJobName, params, 500, BatchStatus.FAILED);
+        });
     }
 
 
