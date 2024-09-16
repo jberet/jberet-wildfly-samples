@@ -57,7 +57,7 @@
         <wildfly.version>26.0.0.Final</wildfly.version>
         <version.org.jboss.resteasy>6.2.10.Final</version.org.jboss.resteasy>
         <version.org.jboss.resteasy.resteasy-jackson-provider>4.0.0.Beta5</version.org.jboss.resteasy.resteasy-jackson-provider>
-        <version.org.jberet.rest>1.4.1.Final</version.org.jberet.rest>
+        <version.org.jberet.rest>3.0.0.Final</version.org.jberet.rest>
         <version.org.jberet.schedule>1.4.1.Final</version.org.jberet.schedule>
         <version.org.jberet.jberet-core>1.4.7.Final</version.org.jberet.jberet-core>
         <version.org.jberet.jberet-support>2.1.2.Final</version.org.jberet.jberet-support>
