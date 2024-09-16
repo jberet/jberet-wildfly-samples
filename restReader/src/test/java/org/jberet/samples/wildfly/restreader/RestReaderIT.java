@@ -11,15 +11,15 @@
 package org.jberet.samples.wildfly.restreader;
 
 import java.util.Properties;
-import javax.batch.runtime.BatchStatus;
 
+import jakarta.batch.runtime.BatchStatus;
 import org.jberet.rest.client.BatchClient;
 import org.jberet.rest.entity.JobExecutionEntity;
 import org.jberet.samples.wildfly.common.BatchTestBase;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * Tests for {@link org.jberet.support.io.RestItemReader}, which reads data
@@ -110,6 +110,6 @@ public final class RestReaderIT extends BatchTestBase {
         jobParams.setProperty("restUrl", restUrl + "/movies/error");
         final JobExecutionEntity jobExecutionEntity =
                 startJobCheckStatus(jobName, jobParams, 5000, BatchStatus.FAILED);
-        Assert.assertThat(jobExecutionEntity.getExitStatus(), containsString("HTTP 500 Internal Server Error"));
+        assertThat(jobExecutionEntity.getExitStatus(), containsString("HTTP 500 Internal Server Error"));
     }
 }

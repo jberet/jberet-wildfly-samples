@@ -10,11 +10,11 @@
 
 package org.jberet.samples.wildfly.batchproperty;
 
-import javax.batch.runtime.BatchStatus;
 
+import jakarta.batch.runtime.BatchStatus;
 import org.jberet.rest.client.BatchClient;
 import org.jberet.samples.wildfly.common.BatchTestBase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class BatchPropertyIT extends BatchTestBase {
     private static final String jobName = "batchproperty";

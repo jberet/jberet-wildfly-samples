@@ -10,12 +10,6 @@
 
 package org.jberet.samples.wildfly.schedule.executor;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
-
-import org.jberet.schedule.JobScheduler;
 
 /**
  * {@code ServletContextListener} class that demonstrates how to configure

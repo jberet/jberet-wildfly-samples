@@ -19,14 +19,15 @@
         <groupId>org.jberet.samples</groupId>
         <artifactId>wildfly-jberet-samples</artifactId>
         <version>1.4.0.Alpha-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>jberet-samples-common</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>

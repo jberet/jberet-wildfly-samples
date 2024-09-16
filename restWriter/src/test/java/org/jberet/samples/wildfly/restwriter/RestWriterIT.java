@@ -12,14 +12,15 @@ package org.jberet.samples.wildfly.restwriter;
 
 import java.net.URI;
 import java.util.Properties;
-import javax.batch.runtime.BatchStatus;
-import javax.ws.rs.client.WebTarget;
 
+import jakarta.batch.runtime.BatchStatus;
+import jakarta.ws.rs.client.WebTarget;
 import org.jberet.rest.client.BatchClient;
 import org.jberet.samples.wildfly.common.BatchTestBase;
 import org.jberet.samples.wildfly.common.Movie;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Tests for {@link org.jberet.support.io.RestItemWriter}, which writes data
@@ -113,7 +114,7 @@ public final class RestWriterIT extends BatchTestBase {
 
     private void getAndVerifyMovies(final String testName) throws Exception {
         final Movie[] movies = getMovies(testName);
-        Assert.assertEquals(100, movies.length);
+        assertEquals(100, movies.length);
         System.out.printf("Movie 1  : %s%nMovie 100: %s%n", movies[0], movies[99]);
     }
 }

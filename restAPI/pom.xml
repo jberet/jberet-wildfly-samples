@@ -24,10 +24,10 @@
     <name>restAPI Maven Webapp</name>
 
     <dependencies>
-        <dependency>
-            <groupId>org.jboss.spec.javax.ejb</groupId>
-            <artifactId>jboss-ejb-api_3.2_spec</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.spec.javax.ejb</groupId>-->
+<!--            <artifactId>jboss-ejb-api_3.2_spec</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.jberet</groupId>
             <artifactId>jberet-support</artifactId>

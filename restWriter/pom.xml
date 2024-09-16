@@ -26,11 +26,11 @@
     <packaging>war</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>org.jboss.spec.javax.servlet</groupId>
-            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.spec.javax.servlet</groupId>-->
+<!--            <artifactId>jboss-servlet-api_3.1_spec</artifactId>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.jberet</groupId>
@@ -42,7 +42,12 @@
             <artifactId>super-csv</artifactId>
             <scope>runtime</scope>
         </dependency>
-
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>${version.jakarta.servlet-api}</version>
+            <scope>provided</scope>
+        </dependency>
         <!-- the following 4 jackson jars are provided in WildFly modules, so do not package them -->
         <!-- see WEB-INF/jboss-deployment-structure.xml -->
         <dependency>

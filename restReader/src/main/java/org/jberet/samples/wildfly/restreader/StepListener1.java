@@ -10,11 +10,13 @@
 
 package org.jberet.samples.wildfly.restreader;
 
+import jakarta.batch.api.listener.StepListener;
+import jakarta.batch.runtime.context.JobContext;
+import jakarta.batch.runtime.context.StepContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+
 import java.util.Properties;
-import javax.batch.runtime.context.JobContext;
-import javax.batch.runtime.context.StepContext;
-import javax.inject.Inject;
-import javax.inject.Named;
 
 /**
  * This step listener class sets the step exception message as the
@@ -22,7 +24,7 @@ import javax.inject.Named;
  * is then verified in the test client.
  */
 @Named
-public class StepListener1 implements javax.batch.api.listener.StepListener {
+public class StepListener1 implements StepListener {
     @Inject
     private StepContext stepContext;
 

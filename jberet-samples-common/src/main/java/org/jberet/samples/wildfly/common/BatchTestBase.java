@@ -11,15 +11,12 @@
 package org.jberet.samples.wildfly.common;
 
 import java.util.Properties;
-import javax.batch.runtime.BatchStatus;
 
+import jakarta.batch.runtime.BatchStatus;
 import org.jberet.rest.client.BatchClient;
 import org.jberet.rest.entity.JobExecutionEntity;
-import org.junit.Assert;
-import org.junit.Rule;
-import org.junit.rules.TestRule;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Base class to be extended by concrete batch test cases.
@@ -27,12 +24,12 @@ import org.junit.runner.Description;
 public abstract class BatchTestBase {
     protected static final String BASE_URL = "http://localhost:8080/";
 
-    @Rule
-    public TestRule watcher = new TestWatcher() {
-        protected void starting(Description description) {
-            System.out.printf("Starting test: %s%n", description.getMethodName());
-        }
-    };
+//    @Rule
+//    public TestRule watcher = new TestWatcher() {
+//        protected void starting(Description description) {
+//            System.out.printf("Starting test: %s%n", description.getMethodName());
+//        }
+//    };
 
     protected abstract BatchClient getBatchClient();
 
@@ -89,7 +86,7 @@ public abstract class BatchTestBase {
                                                     final BatchStatus expectedBatchStatus) throws Exception {
         Thread.sleep(waitMillis);
         final JobExecutionEntity jobExecution2 = getBatchClient().getJobExecution(jobExecutionId);
-        Assert.assertEquals(expectedBatchStatus, jobExecution2.getBatchStatus());
+        assertEquals(expectedBatchStatus, jobExecution2.getBatchStatus());
         return jobExecution2;
     }
 }

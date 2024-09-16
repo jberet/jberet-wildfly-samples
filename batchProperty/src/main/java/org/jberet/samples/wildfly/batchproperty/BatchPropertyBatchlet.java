@@ -10,6 +10,11 @@
 
 package org.jberet.samples.wildfly.batchproperty;
 
+import jakarta.batch.api.AbstractBatchlet;
+import jakarta.batch.api.BatchProperty;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+
 import java.io.File;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
@@ -25,10 +30,6 @@ import java.util.Set;
 import java.util.jar.JarFile;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
-import javax.batch.api.AbstractBatchlet;
-import javax.batch.api.BatchProperty;
-import javax.inject.Inject;
-import javax.inject.Named;
 import javax.management.ObjectName;
 
 /**

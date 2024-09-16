@@ -10,10 +10,11 @@
 
 package org.jberet.samples.wildfly.deserialization;
 
+import jakarta.batch.api.chunk.AbstractItemWriter;
+import jakarta.inject.Named;
+
 import java.io.Serializable;
 import java.util.List;
-import javax.batch.api.chunk.AbstractItemWriter;
-import javax.inject.Named;
 
 @Named
 public class ItemWriter1 extends AbstractItemWriter {
