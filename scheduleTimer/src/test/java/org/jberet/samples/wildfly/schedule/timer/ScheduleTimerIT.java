@@ -14,9 +14,9 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-import javax.batch.runtime.BatchStatus;
-import javax.ejb.ScheduleExpression;
 
+import jakarta.batch.runtime.BatchStatus;
+import jakarta.ejb.ScheduleExpression;
 import org.jberet.rest.client.BatchClient;
 import org.jberet.rest.entity.JobExecutionEntity;
 import org.jberet.samples.wildfly.common.BatchTestBase;
@@ -24,9 +24,9 @@ import org.jberet.schedule.JobSchedule;
 import org.jberet.schedule.JobScheduleConfig;
 import org.jberet.schedule.JobScheduleConfigBuilder;
 import org.jberet.schedule.timer.TimerSchedulerBean;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Tests for batch job scheduling in Java EE, JBoss EAP and WildFly environment,

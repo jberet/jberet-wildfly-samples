@@ -42,7 +42,7 @@
         <module>restReader</module>
         <module>restWriter</module>
 <!--        <module>scheduleExecutor</module>-->
-<!--        <module>scheduleTimer</module>-->
+        <module>scheduleTimer</module>
         <module>purgeJdbcRepository2</module>
 <!--        <module>camelReaderWriter</module>-->
 <!--        <module>clusterChunkServlet</module>-->
@@ -54,11 +54,11 @@
     <properties>
         <version.org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec>2.0.1.Final</version.org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec>
         <version.maven.wildfly.plugin>5.0.1.Final</version.maven.wildfly.plugin>
-        <wildfly.version>26.0.0.Final</wildfly.version>
+        <wildfly.version>33.0.2.Final</wildfly.version>
         <version.org.jboss.resteasy>6.2.10.Final</version.org.jboss.resteasy>
         <version.org.jboss.resteasy.resteasy-jackson-provider>4.0.0.Beta5</version.org.jboss.resteasy.resteasy-jackson-provider>
         <version.org.jberet.rest>3.0.0.Final</version.org.jberet.rest>
-<!--        <version.org.jberet.schedule>3.0.0.Final</version.org.jberet.schedule>-->
+        <version.org.jberet.schedule>3.0.0.Final</version.org.jberet.schedule>
         <version.org.jberet.jberet-core>3.0.0.Final</version.org.jberet.jberet-core>
         <version.org.jberet.jberet-support>3.0.0.Final</version.org.jberet.jberet-support>
 <!--        <version.org.jberet.jberet-camel>1.3.9.SP3</version.org.jberet.jberet-camel>-->
@@ -102,24 +102,24 @@
                 <version>${version.org.jberet.rest}</version>
                 <scope>compile</scope>
             </dependency>
-<!--            <dependency>-->
-<!--                <groupId>org.jberet</groupId>-->
-<!--                <artifactId>jberet-schedule-executor</artifactId>-->
-<!--                <version>${version.org.jberet.schedule}</version>-->
-<!--                <scope>compile</scope>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>org.jberet</groupId>
+                <artifactId>jberet-schedule-executor</artifactId>
+                <version>${version.org.jberet.schedule}</version>
+                <scope>compile</scope>
+            </dependency>
 <!--            <dependency>-->
 <!--                <groupId>org.jberet</groupId>-->
 <!--                <artifactId>jberet-camel</artifactId>-->
 <!--                <version>${version.org.jberet.jberet-camel}</version>-->
 <!--                <scope>compile</scope>-->
 <!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>org.jberet</groupId>-->
-<!--                <artifactId>jberet-schedule-timer</artifactId>-->
-<!--                <version>${version.org.jberet.schedule}</version>-->
-<!--                <scope>runtime</scope>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>org.jberet</groupId>
+                <artifactId>jberet-schedule-timer</artifactId>
+                <version>${version.org.jberet.schedule}</version>
+                <scope>runtime</scope>
+            </dependency>
 <!--            <dependency>-->
 <!--                <groupId>org.jberet</groupId>-->
 <!--                <artifactId>jberet-wildfly-cluster-ejb</artifactId>-->
@@ -223,27 +223,27 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.wildfly.plugins</groupId>
-                    <artifactId>wildfly-maven-plugin</artifactId>
-                    <version>${version.maven.wildfly.plugin}</version>
-                    <executions>
-                        <execution>
-                            <id>wildfly-deploy</id>
-                            <phase>pre-integration-test</phase>
-                            <goals>
-                                <goal>deploy</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>wildfly-undeploy</id>
-                            <phase>clean</phase>
-                            <goals>
-                                <goal>undeploy</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>org.wildfly.plugins</groupId>-->
+<!--                    <artifactId>wildfly-maven-plugin</artifactId>-->
+<!--                    <version>${version.maven.wildfly.plugin}</version>-->
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <id>wildfly-deploy</id>-->
+<!--                            <phase>pre-integration-test</phase>-->
+<!--                            <goals>-->
+<!--                                <goal>deploy</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                        <execution>-->
+<!--                            <id>wildfly-undeploy</id>-->
+<!--                            <phase>clean</phase>-->
+<!--                            <goals>-->
+<!--                                <goal>undeploy</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
+<!--                </plugin>-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
