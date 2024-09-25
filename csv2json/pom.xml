@@ -28,6 +28,7 @@
         <dependency>
             <groupId>org.jberet</groupId>
             <artifactId>jberet-support</artifactId>
+            <version>3.0.0.Final</version>
         </dependency>
         <dependency>
             <groupId>net.sf.supercsv</groupId>
@@ -49,7 +50,14 @@
             <artifactId>jackson-annotations</artifactId>
             <scope>runtime</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.jberet</groupId>
+            <artifactId>jberet-schedule-timer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jberet</groupId>
+            <artifactId>jberet-support</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.jberet.samples</groupId>
             <artifactId>jberet-samples-common</artifactId>
@@ -93,18 +101,102 @@
             <build>
                 <plugins>
                     <plugin>
-                        <artifactId>maven-dependency-plugin</artifactId>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <configuration>
+                            <warName>csv2json</warName>
+                        </configuration>
                     </plugin>
                     <plugin>
                         <groupId>org.wildfly.plugins</groupId>
                         <artifactId>wildfly-maven-plugin</artifactId>
+                        <version>${version.maven.wildfly.plugin}</version>
+                        <configuration>
+                            <galleon-options>
+<!--                                <galleon.offline>false</galleon.offline>-->
+                                <jboss-fork-embedded>true</jboss-fork-embedded>
+                            </galleon-options>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>server-provision</id>
+                                <phase>generate-test-resources</phase>
+                                <goals>
+                                    <goal>provision</goal>
+                                </goals>
+                                <configuration>
+<!--                                    <galleon-options>-->
+<!--                                        <jboss-fork-embedded>true</jboss-fork-embedded>-->
+<!--                                    </galleon-options>-->
+                                    <feature-packs>
+                                        <feature-pack>
+                                            <groupId>org.wildfly</groupId>
+                                            <artifactId>wildfly-ee-galleon-pack</artifactId>
+                                            <version>${wildfly.version}</version>
+                                            <inherit-configs>false</inherit-configs>
+                                            <included-configs>
+                                                <config>
+                                                    <model>standalone</model>
+                                                    <name>standalone-full.xml</name>
+                                                </config>
+                                                <config>
+                                                    <model>standalone</model>
+                                                    <name>standalone.xml</name>
+                                                </config>
+                                            </included-configs>
+                                            <excluded-packages>
+                                                <name>docs.schema</name>
+                                                <name>appclient</name>
+                                                <name>domain</name>
+                                            </excluded-packages>
+                                        </feature-pack>
+                                    </feature-packs>
+                                    <channels>
+                                        <channel>
+                                            <manifest>
+                                                <groupId>org.jberet</groupId>
+                                                <artifactId>jberet-channel-manifest</artifactId>
+                                                <version>${version.org.jberet.jberet-core}</version>
+                                            </manifest>
+                                        </channel>
+                                    </channels>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>wildfly-start</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>start</goal>
+                                    <goal>deploy</goal>
+                                </goals>
+                                <configuration>
+                                    <filename>csv2json.war</filename>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <phase>post-integration-test</phase>
+                                <id>wildfly-stop</id>
+                                <goals>
+                                    <goal>shutdown</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                     <plugin>
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
+                            <testClassesDirectory>${project.build.testOutputDirectory}</testClassesDirectory>
                             <includes>
                                 <include>**/*IT.java</include>
                             </includes>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/*IT.java</exclude>
+                            </excludes>
                         </configuration>
                     </plugin>
                 </plugins>
